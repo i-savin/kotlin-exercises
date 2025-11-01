@@ -79,17 +79,13 @@ class LambdaFunctionalTypeInferred {
 class LambdaUsingImplicitParameter {
     val add: (Int, Int) -> Int = { num1, num2 -> num1 + num2 }
 
-    val printNum: (Int) -> Unit = { num -> print(num) }
+    val printNum: (Int) -> Unit = { print(it) }
 
-    val triple: (Int) -> Int = {num -> num * 3 }
+    val triple: (Int) -> Int = { it * 3 }
 
-    val produceName: (String) -> Name = { name -> Name(name) }
+    val produceName: (String) -> Name = { Name(it) }
 
     val longestOf: (String, String, String) -> String = { str1, str2, str3 -> maxOf(a = str1, b = str2, c = str3, compareBy { it.length}) }
-
-    // TODO: Implement printNum, triple, produceName and longestOf properties,
-    //  just like in LambdaFunctionalTypeSpecified, but this time, whenever possible,
-    //  use implicit parameter `it`.
 }
 
 class FunctionalTest {
