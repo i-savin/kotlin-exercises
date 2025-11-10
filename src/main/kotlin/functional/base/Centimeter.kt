@@ -18,15 +18,15 @@ fun distance(from: Centimeter, to: Centimeter): Centimeter =
     Centimeter(abs(to.value - from.value))
 
 fun main() {
-    val f1 = Centimeter::plus
-    val f2 = Centimeter::times
-    val f3 = Centimeter::value
-    val f4 = Centimeter::toString
-    val f5 = Centimeter(1.0)::plus
-    val f6 = Centimeter(2.0)::times
-    val f7 = Centimeter(3.0)::value
-    val f8 = Centimeter(4.0)::toString
-    val f9 = Int::cm
-    val f10 = 123::cm
-    val f11 = ::distance
+    val f1: (Centimeter, Centimeter) -> Centimeter = Centimeter::plus
+    val f2: (Centimeter, Double) -> Centimeter = Centimeter::times
+    val f3: (Centimeter) -> Double = Centimeter::value
+    val f4: (Centimeter) -> String = Centimeter::toString
+    val f5: (Centimeter) -> Centimeter  = Centimeter(1.0)::plus
+    val f6: (Double) -> Centimeter = Centimeter(2.0)::times
+    val f7: () -> Double = Centimeter(3.0)::value
+    val f8: () -> String = Centimeter(4.0)::toString
+    val f9: (Int) -> Centimeter = Int::cm
+    val f10: () -> Centimeter = 123::cm
+    val f11: (Centimeter, Centimeter) -> Centimeter = ::distance
 }
